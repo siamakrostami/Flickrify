@@ -13,6 +13,12 @@
 		015811B1286C538E00E0C28B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015811AF286C538E00E0C28B /* Main.storyboard */; };
 		015811B3286C538F00E0C28B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015811B2286C538F00E0C28B /* Assets.xcassets */; };
 		015811B6286C538F00E0C28B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015811B4286C538F00E0C28B /* LaunchScreen.storyboard */; };
+		0158C8DE286C544A002F7FC6 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158C8D9286C544A002F7FC6 /* NetworkRouter.swift */; };
+		0158C8DF286C544A002F7FC6 /* RetrieInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158C8DA286C544A002F7FC6 /* RetrieInterceptor.swift */; };
+		0158C8E0286C544A002F7FC6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158C8DB286C544A002F7FC6 /* APIClient.swift */; };
+		0158C8E1286C544A002F7FC6 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158C8DC286C544A002F7FC6 /* MimeType.swift */; };
+		0158C8E2286C544A002F7FC6 /* ClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158C8DD286C544A002F7FC6 /* ClientError.swift */; };
+		C6637A15F87E8D68E2E0D97F /* Pods_Flickrify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0581F137CEF9D287707070EB /* Pods_Flickrify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,14 @@
 		015811B2286C538F00E0C28B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015811B5286C538F00E0C28B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		015811B7286C538F00E0C28B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0158C8D9286C544A002F7FC6 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		0158C8DA286C544A002F7FC6 /* RetrieInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieInterceptor.swift; sourceTree = "<group>"; };
+		0158C8DB286C544A002F7FC6 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		0158C8DC286C544A002F7FC6 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		0158C8DD286C544A002F7FC6 /* ClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientError.swift; sourceTree = "<group>"; };
+		0581F137CEF9D287707070EB /* Pods_Flickrify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickrify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A449AEDDE139B956E34EFFDA /* Pods-Flickrify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickrify.debug.xcconfig"; path = "Target Support Files/Pods-Flickrify/Pods-Flickrify.debug.xcconfig"; sourceTree = "<group>"; };
+		AF05A592F5D358616A4590FC /* Pods-Flickrify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickrify.release.xcconfig"; path = "Target Support Files/Pods-Flickrify/Pods-Flickrify.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6637A15F87E8D68E2E0D97F /* Pods_Flickrify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +57,8 @@
 			children = (
 				015811A8286C538E00E0C28B /* Flickrify */,
 				015811A7286C538E00E0C28B /* Products */,
+				AF3DE2969F133E2D2AA89C51 /* Pods */,
+				DBFA4DB2E2CE88C291541AD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +73,101 @@
 		015811A8286C538E00E0C28B /* Flickrify */ = {
 			isa = PBXGroup;
 			children = (
-				015811A9286C538E00E0C28B /* AppDelegate.swift */,
-				015811AB286C538E00E0C28B /* SceneDelegate.swift */,
+				0158C8E9286C5524002F7FC6 /* Helpers */,
+				0158C8E8286C551B002F7FC6 /* Models */,
+				0158C8E7286C5514002F7FC6 /* Utilities */,
+				0158C8E6286C550A002F7FC6 /* Extensions */,
+				0158C8E5286C54F1002F7FC6 /* Application */,
+				0158C8E4286C54E2002F7FC6 /* Assets */,
+				0158C8E3286C54DA002F7FC6 /* Controllers */,
+				0158C8D8286C544A002F7FC6 /* Network Layer */,
 				015811AD286C538E00E0C28B /* ViewController.swift */,
 				015811AF286C538E00E0C28B /* Main.storyboard */,
-				015811B2286C538F00E0C28B /* Assets.xcassets */,
-				015811B4286C538F00E0C28B /* LaunchScreen.storyboard */,
 				015811B7286C538F00E0C28B /* Info.plist */,
 			);
 			path = Flickrify;
+			sourceTree = "<group>";
+		};
+		0158C8D8286C544A002F7FC6 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				0158C8D9286C544A002F7FC6 /* NetworkRouter.swift */,
+				0158C8DA286C544A002F7FC6 /* RetrieInterceptor.swift */,
+				0158C8DB286C544A002F7FC6 /* APIClient.swift */,
+				0158C8DC286C544A002F7FC6 /* MimeType.swift */,
+				0158C8DD286C544A002F7FC6 /* ClientError.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		0158C8E3286C54DA002F7FC6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0158C8E4286C54E2002F7FC6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				015811B2286C538F00E0C28B /* Assets.xcassets */,
+				015811B4286C538F00E0C28B /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0158C8E5286C54F1002F7FC6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				015811A9286C538E00E0C28B /* AppDelegate.swift */,
+				015811AB286C538E00E0C28B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0158C8E6286C550A002F7FC6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0158C8E7286C5514002F7FC6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0158C8E8286C551B002F7FC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0158C8E9286C5524002F7FC6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AF3DE2969F133E2D2AA89C51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A449AEDDE139B956E34EFFDA /* Pods-Flickrify.debug.xcconfig */,
+				AF05A592F5D358616A4590FC /* Pods-Flickrify.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DBFA4DB2E2CE88C291541AD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0581F137CEF9D287707070EB /* Pods_Flickrify.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 015811BA286C538F00E0C28B /* Build configuration list for PBXNativeTarget "Flickrify" */;
 			buildPhases = (
+				64AE1EBC568A8A4BF269AD66 /* [CP] Check Pods Manifest.lock */,
 				015811A2286C538E00E0C28B /* Sources */,
 				015811A3286C538E00E0C28B /* Frameworks */,
 				015811A4286C538E00E0C28B /* Resources */,
+				5058FB425D3C364FB71BF063 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +238,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5058FB425D3C364FB71BF063 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flickrify/Pods-Flickrify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flickrify/Pods-Flickrify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flickrify/Pods-Flickrify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64AE1EBC568A8A4BF269AD66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flickrify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		015811A2286C538E00E0C28B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				015811AE286C538E00E0C28B /* ViewController.swift in Sources */,
+				0158C8E1286C544A002F7FC6 /* MimeType.swift in Sources */,
+				0158C8DF286C544A002F7FC6 /* RetrieInterceptor.swift in Sources */,
+				0158C8DE286C544A002F7FC6 /* NetworkRouter.swift in Sources */,
 				015811AA286C538E00E0C28B /* AppDelegate.swift in Sources */,
+				0158C8E2286C544A002F7FC6 /* ClientError.swift in Sources */,
 				015811AC286C538E00E0C28B /* SceneDelegate.swift in Sources */,
+				0158C8E0286C544A002F7FC6 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +434,7 @@
 		};
 		015811BB286C538F00E0C28B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A449AEDDE139B956E34EFFDA /* Pods-Flickrify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +462,7 @@
 		};
 		015811BC286C538F00E0C28B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF05A592F5D358616A4590FC /* Pods-Flickrify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
