@@ -74,5 +74,11 @@ extension FlickrViewModel : FlickrViewModelProtocols {
         self.fetchFlickrData()
     }
     
+    func setImageUrlWithModel(model : Photo) -> URL?{
+        guard let farm = model.farm , let server = model.server , let secret = model.secret , let id = model.id else {return nil}
+        let urlString = String(format: Constants.imageURL, farm, server, id, secret)
+        return URL(string: urlString)
+    }
+    
     
 }
