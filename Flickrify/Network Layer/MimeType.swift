@@ -1,8 +1,8 @@
 //
 //  MimeType.swift
-//  Actic
+//  Flickrify
 //
-//  Created by Siamak Rostami on 6/1/21.
+//  Created by Siamak Rostami on 6/29/22.
 //
 
 import Foundation

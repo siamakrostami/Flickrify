@@ -1,8 +1,8 @@
 //
 //  RetrieInterceptor.swift
-//  Actic
+//  Flickrify
 //
-//  Created by Siamak Rostami on 5/25/22.
+//  Created by Siamak Rostami on 6/29/22.
 //
 
 import Foundation
