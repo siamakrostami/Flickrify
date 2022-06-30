@@ -28,7 +28,6 @@ class FlickrCollectionViewCell: UICollectionViewCell {
     func configureCell(imageUrl : URL?) {
         if let cached = SDImageCache.shared.imageFromDiskCache(forKey: imageUrl?.absoluteString){
             DispatchQueue.main.async {
-                debugPrint("fetched offline")
                 self.flickrImageView.image = cached
             }
         }else{

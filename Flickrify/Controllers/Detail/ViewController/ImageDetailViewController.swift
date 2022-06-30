@@ -33,7 +33,6 @@ extension ImageDetailViewController {
         let imageUrl = viewModel.setImageUrlWithModel(model: model)
         if let cached = SDImageCache.shared.imageFromDiskCache(forKey: imageUrl?.absoluteString){
             DispatchQueue.main.async {
-                debugPrint("fetched offline")
                 self.flickrImageView.image = cached
             }
         }else{
