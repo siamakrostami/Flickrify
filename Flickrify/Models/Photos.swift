@@ -12,4 +12,5 @@ struct Photos: Codable {
     var perpage: Int?
     var total: Int?
     var photo: [Photo]?
+
 }
