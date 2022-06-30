@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013CE6CD286D7FC40048D199 /* FlickrCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE6CB286D7FC40048D199 /* FlickrCollectionViewCell.swift */; };
+		013CE6CE286D7FC40048D199 /* FlickrCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013CE6CC286D7FC40048D199 /* FlickrCollectionViewCell.xib */; };
+		013CE6D0286D91B90048D199 /* UITextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE6CF286D91B90048D199 /* UITextfield.swift */; };
 		015811AA286C538E00E0C28B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015811A9286C538E00E0C28B /* AppDelegate.swift */; };
 		015811AC286C538E00E0C28B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015811AB286C538E00E0C28B /* SceneDelegate.swift */; };
 		015811B1286C538E00E0C28B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015811AF286C538E00E0C28B /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013CE6CB286D7FC40048D199 /* FlickrCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCollectionViewCell.swift; sourceTree = "<group>"; };
+		013CE6CC286D7FC40048D199 /* FlickrCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrCollectionViewCell.xib; sourceTree = "<group>"; };
+		013CE6CF286D91B90048D199 /* UITextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfield.swift; sourceTree = "<group>"; };
 		015811A6286C538E00E0C28B /* Flickrify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickrify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015811A9286C538E00E0C28B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		015811AB286C538E00E0C28B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 			children = (
 				0158C903286CF42B002F7FC6 /* UIViewController.swift */,
 				0158C905286CF45D002F7FC6 /* UIView.swift */,
+				013CE6CF286D91B90048D199 /* UITextfield.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,6 +247,8 @@
 		0158C8FD286CEDBF002F7FC6 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				013CE6CB286D7FC40048D199 /* FlickrCollectionViewCell.swift */,
+				013CE6CC286D7FC40048D199 /* FlickrCollectionViewCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -354,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013CE6CE286D7FC40048D199 /* FlickrCollectionViewCell.xib in Resources */,
 				015811B6286C538F00E0C28B /* LaunchScreen.storyboard in Resources */,
 				015811B3286C538F00E0C28B /* Assets.xcassets in Resources */,
 				015811B1286C538E00E0C28B /* Main.storyboard in Resources */,
@@ -415,6 +425,7 @@
 				0158C8EE286CE9E0002F7FC6 /* FlickrDataModel.swift in Sources */,
 				0158C8FF286CEDD5002F7FC6 /* FlickrViewModel.swift in Sources */,
 				0158C8E1286C544A002F7FC6 /* MimeType.swift in Sources */,
+				013CE6D0286D91B90048D199 /* UITextfield.swift in Sources */,
 				0158C8DF286C544A002F7FC6 /* RetrieInterceptor.swift in Sources */,
 				0158C8DE286C544A002F7FC6 /* NetworkRouter.swift in Sources */,
 				0158C904286CF42B002F7FC6 /* UIViewController.swift in Sources */,
@@ -425,6 +436,7 @@
 				0158C8F8286CEA75002F7FC6 /* Constants.swift in Sources */,
 				0158C902286CF394002F7FC6 /* BaseViewController.swift in Sources */,
 				015811AC286C538E00E0C28B /* SceneDelegate.swift in Sources */,
+				013CE6CD286D7FC40048D199 /* FlickrCollectionViewCell.swift in Sources */,
 				0158C906286CF45D002F7FC6 /* UIView.swift in Sources */,
 				0158C90F286CF4D3002F7FC6 /* FlickrCollectionViewController.swift in Sources */,
 				0158C90D286CF4AB002F7FC6 /* ImageDetailViewController.swift in Sources */,

@@ -18,7 +18,8 @@ protocol FlickrViewModelProtocols{
 class FlickrViewModel {
     
     var shouldUpdateCollection = CurrentValueSubject<Bool,Never>(false)
-    var photosArray = [FlickrDataModel]()
+    var photos : FlickrDataModel?
+    var photosArray : [Photo]?
     var searchText = CurrentValueSubject<String?,Never>(nil)
     var currentPage = 1
     var totalPages = 1
@@ -29,15 +30,17 @@ class FlickrViewModel {
     
     init(service : FlickrServices = FlickrServices()){
         self.client = service
+        self.fetchFlickrData()
+        self.searchText.send("boston")
     }
-
+    
 }
 
 extension FlickrViewModel : FlickrViewModelProtocols {
     func fetchFlickrData() {
         self.fetchFlickrImages(searchText: self.searchText.value, page: self.currentPage)
     }
-
+    
     internal func fetchFlickrImages(searchText: String?, page: Int) {
         self.isLoading.send(true)
         client.flickrService.fetchFlickrImages(searchText: searchText, page: page) { [weak self] flickrData in
@@ -47,7 +50,15 @@ extension FlickrViewModel : FlickrViewModelProtocols {
                 self.isLoading.send(false)
                 if let model = model{
                     self.totalPages = model.photos?.pages ?? 1
-                    self.photosArray.append(model)
+                    self.photos = model
+                    if self.photosArray == nil {
+                        self.photosArray = [Photo]()
+                    }
+                    if let photo = model.photos?.photo {
+                        for item in photo{
+                            self.photosArray?.append(item)
+                        }
+                    }
                 }
                 self.shouldUpdateCollection.send(true)
             case .failure(let error):
@@ -61,16 +72,21 @@ extension FlickrViewModel : FlickrViewModelProtocols {
     func fetchNextPage() {
         if currentPage < totalPages {
             currentPage += 1
-            self.fetchFlickrImages(searchText: self.searchText.value, page: self.currentPage)
+            self.fetchFlickrData()
         }
     }
     
     func resetPagination() {
         self.currentPage = 1
         self.totalPages = 1
-        self.photosArray.removeAll()
+        if photosArray != nil{
+            self.photosArray?.removeAll()
+            self.photosArray = nil
+        }
+        if photos != nil{
+            self.photos = nil
+        }
         self.shouldUpdateCollection.send(true)
-        self.searchText.send(nil)
         self.fetchFlickrData()
     }
     

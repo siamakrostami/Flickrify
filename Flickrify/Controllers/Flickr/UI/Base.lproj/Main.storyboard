@@ -16,12 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-Ar-ebU">
-                                <rect key="frame" x="0.0" y="140" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                            </searchBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I89-QF-w9j">
+                                <rect key="frame" x="6" y="148" width="402" height="40"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2Ob-BU-Mk3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-iR-Nxk">
-                                <rect key="frame" x="10.5" y="191" width="393" height="671"/>
+                                <rect key="frame" x="6" y="196" width="402" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nZn-Rm-mQl">
                                     <size key="itemSize" width="128" height="128"/>
@@ -35,19 +45,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1zr-iR-Nxk" firstAttribute="centerX" secondItem="bFM-Ar-ebU" secondAttribute="centerX" id="4yb-B5-dO5"/>
-                            <constraint firstItem="bFM-Ar-ebU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ADP-My-RuS"/>
-                            <constraint firstItem="1zr-iR-Nxk" firstAttribute="width" secondItem="bFM-Ar-ebU" secondAttribute="width" multiplier="0.95" id="DFP-ll-LKg"/>
-                            <constraint firstItem="bFM-Ar-ebU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FLc-kz-BJq"/>
-                            <constraint firstItem="1zr-iR-Nxk" firstAttribute="top" secondItem="bFM-Ar-ebU" secondAttribute="bottom" id="IKg-lD-OsZ"/>
-                            <constraint firstItem="bFM-Ar-ebU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IUc-NI-rgv"/>
+                            <constraint firstItem="I89-QF-w9j" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2Oy-fN-C9W"/>
+                            <constraint firstItem="1zr-iR-Nxk" firstAttribute="centerX" secondItem="I89-QF-w9j" secondAttribute="centerX" id="V1d-QA-MP6"/>
+                            <constraint firstItem="1zr-iR-Nxk" firstAttribute="top" secondItem="I89-QF-w9j" secondAttribute="bottom" constant="8" id="dmd-0c-WPB"/>
+                            <constraint firstItem="1zr-iR-Nxk" firstAttribute="width" secondItem="I89-QF-w9j" secondAttribute="width" id="lWE-Ym-yWK"/>
+                            <constraint firstItem="I89-QF-w9j" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.97" id="lWO-8n-HWQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1zr-iR-Nxk" secondAttribute="bottom" id="odN-rt-DLa"/>
+                            <constraint firstItem="I89-QF-w9j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="qG1-mB-rPu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Flickrify" id="BTf-N7-5gi"/>
                     <connections>
                         <outlet property="imagesCollectionView" destination="1zr-iR-Nxk" id="x03-PW-r9t"/>
-                        <outlet property="searchBar" destination="bFM-Ar-ebU" id="KOt-d3-afy"/>
+                        <outlet property="searchTextfield" destination="I89-QF-w9j" id="tYa-8N-vFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,6 +84,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
