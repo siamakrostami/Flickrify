@@ -51,7 +51,7 @@ extension FlickrRepositories {
         var path: String{
             switch self {
             case .fetchImages(let searchText, let page):
-                return "services/rest/?method=flickr.photos.search&api_key=\(Constants.api_key)&text=\(searchText?.replacingOccurrences(of: " ", with: "+") ?? "boston")&per_page=20&page=\(page)&format=json&nojsoncallback=1"
+                return "services/rest/?method=flickr.photos.search&api_key=\(Constants.api_key)&text=\(searchText?.replacingOccurrences(of: " ", with: "+") ?? "boston")&per_page=\(Constants.per_page)&page=\(page)&format=json&nojsoncallback=1"
             }
         }
         var params: [String : Any]?{

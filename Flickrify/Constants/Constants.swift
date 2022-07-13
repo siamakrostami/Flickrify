@@ -12,7 +12,7 @@ class Constants {
     static let api_key = "417a9ad6bdde0789bf2e1ad93ee89f00"
     static let per_page = 20
     static let baseUrl = "https://www.flickr.com/"
-    static let imageURL = "https://farm%d.staticflickr.com/%@/%@_%@_\(Constants.size.url_s.value).jpg"
+    static let imageURL = "https://farm%d.staticflickr.com/%@/%@_%@_\(Constants.size.url_l.value).jpg"
     
     enum size: String {
         case url_sq = "s"   //small square 75x75

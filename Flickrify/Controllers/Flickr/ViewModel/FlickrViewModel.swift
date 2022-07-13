@@ -18,7 +18,7 @@ protocol FlickrViewModelProtocols{
 class FlickrViewModel {
     
     var shouldUpdateCollection = CurrentValueSubject<Bool,Never>(false)
-    var photos : FlickrDataModel?
+    private var photos : FlickrDataModel?
     var photosArray : [Photo]?
     var searchText = CurrentValueSubject<String?,Never>(nil)
     var currentPage = 1
